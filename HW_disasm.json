@@ -1,0 +1,20 @@
+  ; DATA XREF from entry0 @ 0x860(r)
+  ; DATA XREF from entry.fini0 @ 0x920(r)
+┌ 52: int main (int argc, char **argv, char **envp);
+│ afv: vars(2:sp[0x8..0x10])
+│ 0x00000968      fd7bbfa9       stp x29, x30, [sp, -0x10]!
+│ 0x0000096c      fd030091       mov x29, sp
+│ 0x00000970      00000090       adrp x0, 0
+│ 0x00000974      01002791       add x1, x0, str.Hello_World_          ; 0x9c0 ; "Hello World!"
+│ 0x00000978      e00000f0       adrp x0, 0x1f000
+│ 0x0000097c      00e447f9       ldr x0, [x0, 0xfc8]                   ; [0x1ffc8:4]=0
+│                                                                      ; reloc.std::cout
+│ 0x00000980      98ffff97       bl method std::basic_ostream<char, std::char_traits<char> >& std::operator<< <std::char_traits<char> >(std::basic_ostream<char, std::char_traits<char> >&, char const*) ; method.std::basic_ostream_char__std::char_traits_char____std::operator____std.char_traits_char____std::basic_ostream_char__std::char_traits_char_____char_const_
+│ 0x00000984      e10000f0       adrp x1, 0x1f000
+│ 0x00000988      21dc47f9       ldr x1, [x1, 0xfb8]                   ; [0x1ffb8:4]=0
+│                                                                      ; reloc.std::basic_ostream_char__std::char_traits_char____std::endl_char__std::char_traits_char____std::basic_ostream_char__std::char_traits_char____
+│ 0x0000098c      99ffff97       bl sym std::ostream::operator<<(std::ostream& (*)(std::ostream&)) ; sym.imp.std::ostream::operator___std::ostream____std::ostream__
+│ 0x00000990      00008052       mov w0, 0
+│ 0x00000994      fd7bc1a8       ldp x29, x30, [sp], 0x10
+└ 0x00000998      c0035fd6       ret
+
