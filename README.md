@@ -69,10 +69,10 @@ Open Radare2 in writeable mode on the original hello binary:
 
 
 r2 -w hello
-Seek to the offset where the string “Hello World!” is located. In this example, the offset is 0x9C1. To navigate:
+Seek to the offset where the string “Hello World!” is located. In this example, the offset is 0x9c0. To navigate:
 
 
-s 0x9C1
+s 0x9c0
 Patch the string at that address:
 
 wx 48 61 63 6b 65 64 20 57 6f 72 6c 64 21 00
@@ -154,7 +154,7 @@ Verify the original output:
 Open Radare2 and apply the patch:
 
 r2 -w hello
-Navigate to offset 0x9C1.
+Navigate to offset 0x9c0.
 
 Write the bytes for “Hacked World!”:
 
@@ -174,7 +174,7 @@ radiff2 -u hello hacked > patchHW.json
 
 pdj @ 0x960 > HW_disasm.json
 Notes & Tips
-The exact offset (0x9C1) may differ if compiler options or versions change. Always confirm the string’s address by searching within Radare2:
+The exact offset (0x9c0) may differ if compiler options or versions change. Always confirm the string’s address by searching within Radare2:
 
 iz~Hello
 Look for the address of Hello World! in the string table.
